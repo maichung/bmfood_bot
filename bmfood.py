@@ -47,12 +47,12 @@ def menu_callback(update: Update, context: CallbackContext) -> None:
     query.answer()
     if query.data == 'ton_kho_ngoai':
         # Thực hiện truy vấn SQL cho tồn kho ngoài
-        result = run_sql_query("SELECT * FROM TonKhoNgoai")
+        result = run_sql_query("SELECT * FROM DM_KhachHang")
         response = "\n".join([f"{row.ProductName}: {row.Quantity}" for row in result])
         query.edit_message_text(text=f'Tồn kho ngoài:\n{response}')
     elif query.data == 'ton_kho_thanh_pham':
         # Thực hiện truy vấn SQL cho tồn kho thành phẩm
-        result = run_sql_query("SELECT * FROM TonKhoThanhPham")
+        result = run_sql_query("SELECT * FROM tbl_hanmuccongno")
         response = "\n".join([f"{row.ProductName}: {row.Quantity}" for row in result])
         query.edit_message_text(text=f'Tồn kho thành phẩm:\n{response}')
 
