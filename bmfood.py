@@ -4,21 +4,14 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, Callback
 
 # Thay thế bằng API key của bạn
 API_KEY = "6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0"
-driver = 'ODBC Driver 17 for SQL Server'
 server = '192.168.1.3'
 port = '1433'
 database = 'BMQuanLySanXuat'
 username = 'sa'
 password = 'BiNhMinHGroUpSQlSv2O18'
+# Chuỗi kết nối
+conn_str = f'Driver=ODBC Driver 17 for SQL Server;Server={server},{port};Database={database};UID={username};PWD={password}'
 # Khởi tạo kết nối đến SQL Server
-conn_str = (
-    f'Driver={driver};'
-    f'Server={server};'
-    f'Port={port};'
-    f'Database={database};'
-    f'UID={username};'
-    f'PWD={password};'
-)
 conn = pyodbc.connect(conn_str)
 # Hàm để thực hiện truy vấn SQL và trả về kết quả
 def run_sql_query(query):
