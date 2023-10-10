@@ -1,7 +1,7 @@
-import pyodbc
 import telegram
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
+import pyodbc
 
 # Thay thế bằng API key của bạn
 API_KEY = "6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0"
@@ -11,9 +11,10 @@ database = 'BMQuanLySanXuat'
 username = 'sa'
 password = 'BiNhMinHGroUp@SqlSv2O18'
 # Chuỗi kết nối
-conn_str = f'Driver=ODBC Driver 18 for SQL Server;Server={server},{port};Database={database};UID={username};PWD={password};TrustServerCertificate=Yes'
+conn_str = f'DRIVER=ODBC Driver 18 for SQL Server;SERVER={server},{port};DATABASE={database};UID={username};PWD={password};TrustServerCertificate=Yes'
 # Khởi tạo kết nối đến SQL Server
 conn = pyodbc.connect(conn_str)
+
 # Hàm để thực hiện truy vấn SQL và trả về kết quả
 def run_sql_query(query):
     cursor = conn.cursor()
@@ -54,7 +55,7 @@ def menu_callback(update: Update, context: CallbackContext) -> None:
         query.edit_message_text(text=f'Tồn kho thành phẩm:\n{response}')
 
 def main() -> None:
-    updater = Updater(token="6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0", use_context=True)
+    updater = Updater(token=API_KEY, use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
