@@ -1,4 +1,5 @@
 import telegram
+import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
 import pyodbc
@@ -21,7 +22,19 @@ def run_sql_query(query):
     cursor.execute(query)
     rows = cursor.fetchall()
     return rows
-
+#Ghi lai log
+logging.basicConfig(
+    level=logging.INFO,  # Chọn mức độ ghi log (INFO, DEBUG, ERROR, vv.)
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+def my_function():
+    # Thực hiện một số thao tác
+    logging.info('Thực hiện một số thao tác')
+    # Xảy ra lỗi
+    try:
+        result = 1 / 0
+    except Exception as e:
+        logging.error('Xảy ra lỗi: %s', e)
 # Xử lý lệnh /start
 def start(update: Update, context: CallbackContext) -> None:
     user = update.effective_user
