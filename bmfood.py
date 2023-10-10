@@ -8,7 +8,7 @@ server = '192.168.1.3'
 port = '1433'
 database = 'BMQuanLySanXuat'
 username = 'sa'
-password = 'BiNhMinHGroUpSQlSv2O18'
+password = 'BiNhMinHGroUp@SqlSv2O18'
 # Chuỗi kết nối
 conn_str = f'Driver=ODBC Driver 18 for SQL Server;Server={server},{port};Database={database};UID={username};PWD={password};TrustServerCertificate=Yes'
 # Khởi tạo kết nối đến SQL Server
