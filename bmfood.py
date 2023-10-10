@@ -10,7 +10,7 @@ database = 'BMQuanLySanXuat'
 username = 'sa'
 password = 'BiNhMinHGroUpSQlSv2O18'
 # Chuỗi kết nối
-conn_str = f'Driver=ODBC Driver 18 for SQL Server;Server={server},{port};Database={database};UID={username};PWD={password}'
+conn_str = f'Driver=ODBC Driver 18 for SQL Server;Server={server},{port};Database={database};UID={username};PWD={password};TrustServerCertificate=Yes'
 # Khởi tạo kết nối đến SQL Server
 conn = pyodbc.connect(conn_str)
 # Hàm để thực hiện truy vấn SQL và trả về kết quả
