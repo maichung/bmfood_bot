@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
 
 # Thay thế bằng API key của bạn
-API_KEY = '6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0'
+API_KEY = "6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0"
 server = '192.168.1.3'
 port = '1433'
 database = 'BMQuanLySanXuat'
@@ -53,7 +53,7 @@ def menu_callback(update: Update, context: CallbackContext) -> None:
         query.edit_message_text(text=f'Tồn kho thành phẩm:\n{response}')
 
 def main() -> None:
-    updater = Updater(token=API_KEY, use_context=True)
+    updater = Updater(token=6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0, use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
