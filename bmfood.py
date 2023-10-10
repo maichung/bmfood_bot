@@ -53,7 +53,7 @@ def menu_callback(update: Update, context: CallbackContext) -> None:
         query.edit_message_text(text=f'Tồn kho thành phẩm:\n{response}')
 
 def main() -> None:
-    updater = Updater(token=6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0, use_context=True)
+    updater = Updater(token="6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0", use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
