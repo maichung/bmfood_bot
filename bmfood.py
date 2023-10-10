@@ -4,7 +4,7 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, Callback
 
 # Thay thế bằng API key của bạn
 API_KEY = "6500460826:AAEhdBmolpAG81D96JRdbUvBBe4-WloYLk0"
-driver = 'ODBC Driver 17 for SQL Server'
+driver = 'ODBC Driver 13 for SQL Server'
 server = '113.161.144.16'
 port = '1499'
 database = 'BMQuanLySanXuat'
