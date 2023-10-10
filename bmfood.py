@@ -65,5 +65,5 @@ def main() -> None:
     updater.start_polling()
     updater.idle()
 
-if __name__ == '__main__':
+if __name__ == 'bmfood':
     main()
